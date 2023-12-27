@@ -1,0 +1,73 @@
+﻿@using System.Collections;
+@model IList<Ogrenci>
+@{
+    ViewData["Title"] = "Ogrenci Listeleme";
+}
+
+<h3>ViewData ile gelen Öğrenciler</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < 2; i++)
+        {
+            <tr>
+               
+                <td>@(((Ogrenci)((((IList)ViewData["students"])[i]))).Ad)</td>
+                <td>@(((Ogrenci)((((IList)ViewData["students"])[i]))).Soyad)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>ViewBag ile gelen Öğrenciler</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < 2; i++)
+        {
+            <tr>
+                <td>@ViewBag.ogrenciler[i].Id</td>
+                <td>@ViewBag.ogrenciler[i].Ad</td>
+                <td>@ViewBag.ogrenciler[i].Soyad</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>ViewModel ile gelen Öğrenciler</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>               
+                <td>@item.Ad</td>
+                <td>@item.Soyad</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

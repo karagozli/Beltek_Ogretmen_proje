@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Ogrenci>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StudentList</title>
+</head>
+<body>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Ad @item.Soyad</li>
+        }
+    </ul>
+</body>
+</html>

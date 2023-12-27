@@ -1,0 +1,28 @@
+﻿@model Ogrenci
+@{
+    ViewData["Title"] = "UpdateStudent";
+}
+
+<h1>Update Student</h1>
+
+<form asp-action="UpdateStudent" asp-controller="Student" method="post">
+    <input type="hidden" asp-for="Ogrenciid" />
+    <div class="mb-3">
+        <label class="form-label">Ad</label>
+        <input asp-for="Ad" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Soyad</label>
+        <input asp-for="Soyad" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Numara" class="form-label"></label>
+        <input asp-for="Numara" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Bolum" class="form-label"></label>
+        <input asp-for="Bolum" class="form-control" />
+    </div>
+    <input type="submit" value="Kaydet" class="btn btn-primary" />
+</form>
+
